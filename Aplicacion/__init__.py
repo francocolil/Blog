@@ -1,9 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
+from flask_ckeditor import CKEditor
 
 db = SQLAlchemy()
 
@@ -12,16 +9,22 @@ def run_app():
 
     app = Flask(__name__)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATA_BASE')
-    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+    ckeditor = CKEditor(app)
+
+    app.config.from_object('config.Config')
 
     db.init_app(app)
 
+
+    #* RUTAS
     from . import auth
     app.register_blueprint(auth.bp)
 
     from . import post_general
     app.register_blueprint(post_general.bp)
+
+    from . import post_cortes
+    app.register_blueprint(post_cortes.bp)
 
 
     @app.route("/")

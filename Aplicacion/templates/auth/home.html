@@ -1,4 +1,42 @@
 {% extends 'base.html' %} {% block title %} Home User {% endblock %} {% block
 content %}
-<h1>Home</h1>
-{% endblock %}
+
+<div class="container">
+  <h1>Posts Registrados</h1>
+
+  <!-- POST DE MODA -->
+  {% for Moda in postModa | reverse %}
+  <h2>Posts sobre la Moda</h2>
+  <tr>
+    <td>
+      <h5>{{Moda.title}}</h5>
+      <h5>{{Moda.url}}</h5>
+    </td>
+  </tr>
+
+  {% endfor %}
+
+  <!-- POST DE CORTES -->
+  {% for Cortes in posCortes | reverse %}
+  <h2>Post sobre los Cortes de cabello</h2>
+  <tr>
+    <td>
+      <h5>{{Cortes.title}}</h5>
+      <h5>{{Cortes.url}}</h5>
+    </td>
+  </tr>
+
+  {% endfor %}
+
+  <!-- POST DE TEMPORADAS -->
+  {% for Temporada in posTemporadas | reverse %}
+  <h2>Post sobre las temporadas</h2>
+  <tr>
+    <td>
+      <h5>{{Temporada.title}}</h5>
+      <h5>{{Temporada.url}}</h5>
+    </td>
+  </tr>
+
+  {% endfor %} {% endblock %}
+</div>

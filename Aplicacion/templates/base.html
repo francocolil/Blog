@@ -51,7 +51,9 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#">Registro de Post de Cortes</a>
+              <a class="nav-link" href="{{url_for('postcortes.create')}}"
+                >Registro de Post de Cortes</a
+              >
             </li>
 
             <li class="nav-item">
@@ -91,5 +93,8 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <!-- CKEDITOR PARA CREAR EL BLOG -->
+    {{ ckeditor.load() }}
   </body>
 </html>

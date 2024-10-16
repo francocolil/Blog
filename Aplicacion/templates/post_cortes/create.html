@@ -7,8 +7,10 @@
     <input type="text" name="title" id="title" required />
     <label for="url">Url: </label>
     <input type="text" name="url" id="url" required />
-    <label for="desc">Descripcion: </label>
-    <input type="text" name="desc" id="desc" required />
+    <label for="desc">Contenido: </label>
+    <!-- CARGAR CKEDITOR -->
+    {{ ckeditor.create() }}
+    <br />
     <input type="submit" value="Subir Post" />
   </form>
 </div>

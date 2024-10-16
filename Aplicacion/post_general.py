@@ -17,4 +17,4 @@ def post():
     posCortes = Post_Cortes.query.all()
     posTemporadas = Post_Temporadas.query.all()
 
-    return render_template('auth/home.html')
+    return render_template('auth/home.html', postModa=postModa, posCortes=posCortes, posTemporadas= posTemporadas)
