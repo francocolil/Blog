@@ -4,14 +4,30 @@
   <h3>{% block title %} Actualizar Post de Cortes {% endblock %}</h3>
   <form action="" method="POST">
     <label for="title">Titulo: </label>
-    <input type="text" name="title" id="title" required />
+    <input
+      type="text"
+      name="title"
+      id="title"
+      required
+      value="{{post_cortes.title}}"
+    />
     <label for="url">Url: </label>
-    <input type="text" name="url" id="url" required />
+    <input
+      type="text"
+      name="url"
+      id="url"
+      required
+      value="{{post_cortes.url}}"
+    />
     <label for="desc">Contenido: </label>
     <!-- CARGAR CKEDITOR -->
-    {{ ckeditor.create() }}
+    {{ ckeditor.create(value=post_cortes.desc) }}
     <br />
     <input type="submit" value="Subir Post" />
+
+    <div class="form-group">
+      <a href="{{url_for('post.post')}}" class="btn btn-secondary">Cancelar</a>
+    </div>
   </form>
 </div>
 {% endblock %}

@@ -48,7 +48,7 @@ def tener_id(id):
     return post_cortes
 
 
-@bp.route('/update/<int:id>')
+@bp.route('/update/<int:id>', methods=["GET", "POST"])
 def update(id):
 
     post_cortes = tener_id(id)
@@ -56,7 +56,7 @@ def update(id):
     if request.method == "POST":
         post_cortes.title = request.form.get("title")
         post_cortes.url = request.form.get('url')
-        url = url.replace(' ', '-')
+        post_cortes.url = post_cortes.url.replace(' ', '-')
         post_cortes.desc = request.form.get('ckeditor')
 
         db.session.commit()

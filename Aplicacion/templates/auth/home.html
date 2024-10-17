@@ -16,14 +16,14 @@ content %}
 
       <td>
           <a
-            href="#"
+            href="{{url_for('postmoda.update', id = Moda.id)}}"
             class="btn btn-info btn-sm"
             >Editar</a
           >
         </td>
         <td>
           <a
-            href="#"
+            href="{{url_for('postmoda.delete', id = Moda.id)}}"
             class="btn btn-danger btn-sm"
             >Eliminar</a
           >
@@ -76,14 +76,14 @@ content %}
 
       <td>
           <a
-            href="#"
+            href="{{url_for('posttemporada.update', id = Temporada.id)}}"
             class="btn btn-info btn-sm"
             >Editar</a
           >
         </td>
         <td>
           <a
-            href="#"
+            href="{{url_for('posttemporada.delete', id = Temporada.id)}}"
             class="btn btn-danger btn-sm"
             >Eliminar</a
           >
