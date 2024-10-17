@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <h3>{% block title %} Actualizar Post sobre las Temporadas {% endblock %}</h3>
+  <form action="" method="POST">
+    <label for="title">Titulo: </label>
+    <input type="text" name="title" id="title" required />
+    <label for="url">Url: </label>
+    <input type="text" name="url" id="url" required />
+    <label for="desc">Contenido: </label>
+    <!-- CARGAR CKEDITOR -->
+    {{ ckeditor.create() }}
+    <br />
+    <input type="submit" value="Actualizar Post" />
+  </form>
+</div>
+{% endblock %}

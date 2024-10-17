@@ -26,6 +26,12 @@ def run_app():
     from . import post_cortes
     app.register_blueprint(post_cortes.bp)
 
+    from . import post_moda
+    app.register_blueprint(post_moda.bp)
+
+    from . import post_temporada
+    app.register_blueprint(post_temporada.bp)
+
 
     @app.route("/")
     def index():

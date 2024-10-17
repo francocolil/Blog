@@ -11,6 +11,24 @@ content %}
     <td>
       <h5>{{Moda.title}}</h5>
       <h5>{{Moda.url}}</h5>
+      <!-- safe nos ayuda a limpiar el contenido que enviamos en ckeditor logrando mostrar el contenido correctamente -->
+      <h4>{{Moda.desc | safe}}</h4>
+
+      <td>
+          <a
+            href="#"
+            class="btn btn-info btn-sm"
+            >Editar</a
+          >
+        </td>
+        <td>
+          <a
+            href="#"
+            class="btn btn-danger btn-sm"
+            >Eliminar</a
+          >
+        </td>
+
     </td>
   </tr>
 
@@ -23,6 +41,24 @@ content %}
     <td>
       <h5>{{Cortes.title}}</h5>
       <h5>{{Cortes.url}}</h5>
+      <!-- safe nos ayuda a limpiar el contenido que enviamos en ckeditor logrando mostrar el contenido correctamente -->
+      <h4>{{Cortes.desc | safe}}</h4>
+
+      <td>
+          <a
+            href="{{url_for('postcortes.update', id = Cortes.id)}}"
+            class="btn btn-info btn-sm"
+            >Editar</a
+          >
+        </td>
+        <td>
+          <a
+            href="{{url_for('postcortes.delete', id = Cortes.id)}}"
+            class="btn btn-danger btn-sm"
+            >Eliminar</a
+          >
+        </td>
+
     </td>
   </tr>
 
@@ -35,6 +71,24 @@ content %}
     <td>
       <h5>{{Temporada.title}}</h5>
       <h5>{{Temporada.url}}</h5>
+      <!-- safe nos ayuda a limpiar el contenido que enviamos en ckeditor logrando mostrar el contenido correctamente -->
+      <h4>{{Temporada.desc | safe}}</h4>
+
+      <td>
+          <a
+            href="#"
+            class="btn btn-info btn-sm"
+            >Editar</a
+          >
+        </td>
+        <td>
+          <a
+            href="#"
+            class="btn btn-danger btn-sm"
+            >Eliminar</a
+          >
+        </td>
+
     </td>
   </tr>
 

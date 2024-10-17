@@ -40,3 +40,38 @@ def create():
             error = f"Esa URL {url} ya esta registrada"
 
     return render_template("post_cortes/create.html")
+
+
+#* Tener ID del POST
+def tener_id(id):
+    post_cortes = Post_Cortes.query.get_or_404(id)
+    return post_cortes
+
+
+@bp.route('/update/<int:id>')
+def update(id):
+
+    post_cortes = tener_id(id)
+
+    if request.method == "POST":
+        post_cortes.title = request.form.get("title")
+        post_cortes.url = request.form.get('url')
+        url = url.replace(' ', '-')
+        post_cortes.desc = request.form.get('ckeditor')
+
+        db.session.commit()
+        return redirect(url_for('post.post'))
+    
+    return render_template('post_cortes/update.html', post_cortes=post_cortes)
+
+
+#* Eliminar Post
+@bp.route('/delete/<int:id>')
+@necesita_iniciar_sesion
+def delete(id):
+
+    post_cortes = tener_id(id)
+
+    db.session.delete(post_cortes)
+    db.session.commit()
+    return redirect(url_for('post.post'))
