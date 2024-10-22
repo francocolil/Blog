@@ -21,13 +21,34 @@ content %}
             >Editar</a
           >
         </td>
-        <td>
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Eliminar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Enverdad quieres eliminar este pos?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{Moda.title}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
           <a
             href="{{url_for('postmoda.delete', id = Moda.id)}}"
             class="btn btn-danger btn-sm"
             >Eliminar</a
           >
-        </td>
+      </div>
+    </div>
+  </div>
+</div>
 
     </td>
   </tr>
@@ -52,12 +73,34 @@ content %}
           >
         </td>
         <td>
-          <a
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Eliminar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Enverdad quieres eliminar este pos?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{Cortes.title}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a
             href="{{url_for('postcortes.delete', id = Cortes.id)}}"
             class="btn btn-danger btn-sm"
             >Eliminar</a
           >
-        </td>
+      </div>
+    </div>
+  </div>
+</div>
 
     </td>
   </tr>
@@ -65,7 +108,7 @@ content %}
   {% endfor %}
 
   <!-- POST DE TEMPORADAS -->
-  {% for Temporada in posTemporadas | reverse %}
+  {% for Temporada in postTemporadas | reverse %}
   <h2>Post sobre las temporadas</h2>
   <tr>
     <td>
@@ -81,13 +124,34 @@ content %}
             >Editar</a
           >
         </td>
-        <td>
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Eliminar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Enverdad quieres eliminar este pos?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{Temporada.title}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
           <a
             href="{{url_for('posttemporada.delete', id = Temporada.id)}}"
             class="btn btn-danger btn-sm"
             >Eliminar</a
           >
-        </td>
+      </div>
+    </div>
+  </div>
+</div>
 
     </td>
   </tr>

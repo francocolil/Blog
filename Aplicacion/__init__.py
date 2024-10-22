@@ -32,6 +32,12 @@ def run_app():
     from . import post_temporada
     app.register_blueprint(post_temporada.bp)
 
+    from . import get_moda
+    app.register_blueprint(get_moda.bp)
+
+    from . import get_temporada
+    app.register_blueprint(get_temporada.bp)
+
 
     @app.route("/")
     def index():

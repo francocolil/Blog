@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>{% block title %}Post Sobre las Temporadas{% endblock %}</h1>
+
+{% for getposttemporada in postTemporada | reverse %}
+
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title">{{getposttemporada.title}}</h5>
+    <p class="card-text">{{getposttemporada.url}}</p>
+    <a
+      href="{{url_for('getposttemporada.gettemporada', url=getposttemporada.url)}}"
+      class="btn btn-primary"
+      >Ver Post</a
+    >
+  </div>
+</div>
+
+{% endfor %} {% endblock %}

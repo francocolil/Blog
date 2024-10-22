@@ -30,7 +30,6 @@ def register():
 
         flash(error)
         
-
     return render_template("auth/register.html")
 
 
@@ -53,6 +52,8 @@ def login():
             session.clear()
             session['user_id'] = user.id
             return redirect(url_for('post.post'))
+        
+        flash(error)
 
     return render_template("auth/login.html")
 
