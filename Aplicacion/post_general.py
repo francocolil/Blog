@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, Blueprint
 
-from .models import Post_Cortes,Post_Moda,Post_Temporadas
+from .models import Post_Cortes,Post_Moda
 
 from Aplicacion.auth import necesita_iniciar_sesion
 
@@ -14,9 +14,8 @@ bp = Blueprint("post", __name__, url_prefix="/post")
 def post():
 
     posCortes = Post_Cortes.query.all()
-    postTemporadas = Post_Temporadas.query.all()
     postModa = Post_Moda.query.all()
-    return render_template('auth/home.html', posCortes=posCortes, postTemporadas=postTemporadas, postModa=postModa)
+    return render_template('auth/home.html', posCortes=posCortes, postModa=postModa)
 
 
 

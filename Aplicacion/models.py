@@ -45,20 +45,3 @@ class Post_Cortes(db.Model):
 
     def __reprt__(self):
         return f"<Cortes: {self.title}>"
-    
-
-class Post_Temporadas(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    created_by = db.Column(db.Integer, db.ForeignKey('user.id'))
-    title = db.Column(db.Integer, nullable=False)
-    url = db.Column(db.String(50), nullable=False)
-    desc = db.Column(db.Text)
-
-    def __init__(self, created_by, title,url,desc):
-        self.created_by = created_by
-        self.title = title
-        self.url = url
-        self.desc = desc
-
-    def __reprt__(self):
-        return f"<Temporadas: {self.title}>"

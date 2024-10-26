@@ -106,55 +106,5 @@ content %}
   </tr>
 
   {% endfor %}
-
-  <!-- POST DE TEMPORADAS -->
-  {% for Temporada in postTemporadas | reverse %}
-  <h2>Post sobre las temporadas</h2>
-  <tr>
-    <td>
-      <h5>{{Temporada.title}}</h5>
-      <h5>{{Temporada.url}}</h5>
-      <!-- safe nos ayuda a limpiar el contenido que enviamos en ckeditor logrando mostrar el contenido correctamente -->
-      <h4>{{Temporada.desc | safe}}</h4>
-
-      <td>
-          <a
-            href="{{url_for('posttemporada.update', id = Temporada.id)}}"
-            class="btn btn-info btn-sm"
-            >Editar</a
-          >
-        </td>
-
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Eliminar
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Enverdad quieres eliminar este pos?</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        {{Temporada.title}}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <a
-            href="{{url_for('posttemporada.delete', id = Temporada.id)}}"
-            class="btn btn-danger btn-sm"
-            >Eliminar</a
-          >
-      </div>
-    </div>
-  </div>
-</div>
-
-    </td>
-  </tr>
-
-  {% endfor %} {% endblock %}
+  {% endblock %}
 </div>

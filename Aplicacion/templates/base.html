@@ -63,10 +63,9 @@
                   >
                 </li>
                 <li>
-                  <a class="nav-link" href="#">Post sobre la Moda</a>
-                </li>
-                <li>
-                  <a class="nav-link" href="#">Post sobre Temporadas</a>
+                  <a class="nav-link" href="{{url_for('getpostmoda.postModa')}}"
+                    >Post sobre la Moda</a
+                  >
                 </li>
               </ul>
             </li>
@@ -96,11 +95,6 @@
                 <li>
                   <a class="nav-link" href="{{url_for('postcortes.create')}}"
                     >Registro de Post de Cortes</a
-                  >
-                </li>
-                <li>
-                  <a class="nav-link" href="{{url_for('posttemporada.create')}}"
-                    >Registro de Post de Temporadas</a
                   >
                 </li>
               </ul>
@@ -133,13 +127,6 @@
                 <li>
                   <a class="nav-link" href="{{url_for('getpostmoda.postModa')}}"
                     >Post sobre la Moda</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="nav-link"
-                    href="{{url_for('getposttemporada.postTemporada')}}"
-                    >Post sobre Temporadas</a
                   >
                 </li>
               </ul>

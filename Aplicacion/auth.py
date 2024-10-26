@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, g, session, url_for, Blueprint, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from .models import User, Post_Cortes,Post_Moda,Post_Temporadas
+from .models import User, Post_Cortes,Post_Moda
 
 from Aplicacion import db
 
